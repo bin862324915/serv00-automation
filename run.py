@@ -31,7 +31,7 @@ command = 'whoami'
 user_list, hostname_list = ssh_multiple_connections(hosts_info, command)
 content = "SSH服务器登录信息：\n"
 for user, hostname in zip(user_list, hostname_list):
-    content += f"{user}，服务器：{hostname}\n"
+    content += f"用户名：{user}，服务器：{hostname}\n"
 beijing_timezone = timezone(timedelta(hours=8))
 time = datetime.now(beijing_timezone).strftime('%Y-%m-%d %H:%M:%S')
 loginip = requests.get('https://api.ipify.org?format=json').json()['ip']
