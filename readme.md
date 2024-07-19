@@ -1,4 +1,5 @@
-# 说明
+
+# 说明 
 
 因serv00服务器要求，如果用户帐户在 90 天内未通过 DevilWEB 或 SSH 面板正确登录，则该帐户将自动从系统中删除，并且无法恢复该帐户收集的数据。
 
@@ -6,13 +7,16 @@
 
 tg交流群：[https://t.me/zzzjsjl](https://t.me/zzzjsjl)
 
-
+**希望大家点个Star🌟🌟🌟支持下**
 
 ### 准备工作
 
 - 一个GitHub账号。
 - Fork本仓库
 - 准备好serv00账号
+- 获取您的 Telegram 用户或群组的 Chat ID。
+
+- 在您的 GitHub 仓库中设置以下 Secrets：
 
 
 
@@ -29,14 +33,12 @@ tg交流群：[https://t.me/zzzjsjl](https://t.me/zzzjsjl)
     {"hostname": "s6.serv00.com", "username": "user6", "password": "password6"}
   ]
   ```
+- TELEGRAM_TOKEN：您的 Telegram Bot API Token。示例：`733255939:AAHsoQf-3lOoc1xC8le2d58qlfrCqEXzu74`
+- TELEGRAM_CHAT_ID：您的 Telegram Chat ID（可以是您的私人聊天或群组）。示例：`5329499650`
+- PUSH：推送渠道值为`mail`或者`telegram`。示例：`mail`
+- MAIL：接收通知的邮箱。示例：`mail@mail.com`
 
-  
 
-- `PUSHPLUS_TOKEN`：用于推送通知的API令牌。以下是示例
-
-```bash
-QSchSXne1MzKA3sSuOTHP0dPOR2tEmHDjw
-```
 
 
 
@@ -55,7 +57,7 @@ QSchSXne1MzKA3sSuOTHP0dPOR2tEmHDjw
 - 可以根据自己的需求调整运行时间
 
   ```yaml
-  - cron: '0 11 */7 * *'
+  - cron: '0 11 5 * *'  # 每月的 5号 北京时间 19 点运行
   ```
 
   
