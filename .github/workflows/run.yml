@@ -1,4 +1,4 @@
-name: Run SSH Login
+name: SSH Login
 
 on:
   schedule:
@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  ssh-login-notification:
+  ssh-login:
     runs-on: ubuntu-latest
 
     steps:
@@ -27,4 +27,9 @@ jobs:
         env:
           SSH_INFO: ${{ secrets.SSH_INFO }}
           PUSHPLUS_TOKEN: ${{ secrets.PUSHPLUS_TOKEN }}
+          MAIL: ${{ secrets.MAIL }}
+          PUSH: ${{ secrets.PUSH }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          
         run: python run.py
