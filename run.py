@@ -21,7 +21,7 @@ def ssh_multiple_connections(hosts_info, command):
             hostnames.append(hostname)
             ssh.close()
         except Exception as e:
-            print(f"连接 {hostname} 时出错: {str(e)}")
+            print(f"用户：{username}，连接 {hostname} 时出错: {str(e)}")
     return users, hostnames
 
 ssh_info_str = os.getenv('SSH_INFO', '[]')
@@ -29,13 +29,15 @@ hosts_info = json.loads(ssh_info_str)
 
 command = 'whoami'
 user_list, hostname_list = ssh_multiple_connections(hosts_info, command)
+user_num = len(user_list)
 content = "SSH服务器登录信息：\n"
 for user, hostname in zip(user_list, hostname_list):
     content += f"用户名：{user}，服务器：{hostname}\n"
 beijing_timezone = timezone(timedelta(hours=8))
 time = datetime.now(beijing_timezone).strftime('%Y-%m-%d %H:%M:%S')
+menu = requests.get('https://api.zzzwb.com/v1?get=tg').json()
 loginip = requests.get('https://api.ipify.org?format=json').json()['ip']
-content += f"登录时间：{time}\n登录IP：{loginip}"
+content += f"本次登录用户共： {user_num} 个\n登录时间：{time}\n登录IP：{loginip}"
 
 push = os.getenv('PUSH')
 
@@ -61,16 +63,11 @@ def telegram_push(message):
     payload = {
         'chat_id': os.getenv('TELEGRAM_CHAT_ID'),
         'text': message,
-        'reply_markup': {
-            'inline_keyboard': [
-                [
-                    {
-                        'text': '问题反馈',
-                        'url': 'https://t.me/CN_zzzwb'
-                    }
-                ]
-            ]
-        }
+        'parse_mode': 'HTML',
+        'reply_markup': json.dumps({
+            "inline_keyboard": menu,
+            "one_time_keyboard": True
+         })
     }
     headers = {
         'Content-Type': 'application/json'
