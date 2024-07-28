@@ -33,10 +33,15 @@ tg交流群：[https://t.me/zzzjsjl](https://t.me/zzzjsjl)
     {"hostname": "s6.serv00.com", "username": "user6", "password": "password6"}
   ]
   ```
+- ~PUSHPLUS_TOKEN：pushplus申请的token~
+- **新版已经将pushplus推送移除，请勿添加PUSHPLUS_TOKEN变量**
+- **新版已经将pushplus推送移除，请勿添加PUSHPLUS_TOKEN变量**
+- **新版已经将pushplus推送移除，请勿添加PUSHPLUS_TOKEN变量**
 - TELEGRAM_TOKEN：您的 Telegram Bot API Token。示例：`733255939:AAHsoQf-3lOoc1xC8le2d58qlfrCqEXzu74`
 - TELEGRAM_CHAT_ID：您的 Telegram Chat ID（可以是您的私人聊天或群组）。示例：`5329499650`
 - PUSH：推送渠道值为`mail`或者`telegram`。示例：`mail`
 - MAIL：接收通知的邮箱。示例：`mail@mail.com`
+
 
 
 
