@@ -1,6 +1,6 @@
 name: serv00 login
 
-on:
+off:
   schedule:
   workflow_dispatch:
 
