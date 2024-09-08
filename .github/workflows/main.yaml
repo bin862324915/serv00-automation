@@ -2,7 +2,6 @@ name: serv00 login
 
 on:
   schedule:
-    - cron: '0 10 */30 * *'  # 每 30 天的上午 10 点运行
   workflow_dispatch:
 
 jobs:
