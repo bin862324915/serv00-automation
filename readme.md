@@ -73,3 +73,6 @@ tg交流群：[https://t.me/zzzjsjl](https://t.me/zzzjsjl)
 - **更新和删除**: 如果需要更新或删除 Secrets，可以通过仓库的 Secrets 页面进行管理。
 
 通过以上步骤，你就可以成功将代码 fork 到你的仓库下并运行它了。如果需要进一步的帮助或有其他问题，请随时告知！
+
+### 赞助
+感谢 [YxVM](https://yxvm.com/) 提供服务器赞助
