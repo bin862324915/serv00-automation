@@ -77,7 +77,7 @@ def telegram_push(message):
         print(f"发送消息到Telegram失败: {response.text}")
 
 if push == "mail":
-    mail_push('https://zzzwb.us.kg/test')
+    mail_push('https://zzzwb.pp.ua/test')
 elif push == "telegram":
     telegram_push(content)
 else:
