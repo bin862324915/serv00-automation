@@ -76,3 +76,6 @@ tg交流群：[https://t.me/zzzjsjl](https://t.me/zzzjsjl)
 
 ### 赞助
 感谢 [YxVM](https://yxvm.com/) 提供服务器赞助
+[![YxVM](https://yxvm.com/assets/img/logo.png)](https://yxvm.com/ "yxvm.com")
+
+[![Powered by DartNode](https://dartnode.com/branding/DN-Open-Source-sm.png)](https://dartnode.com "Powered by DartNode - Free VPS for Open Source")
